@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Başlıksız Belge</title>
+<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationCheckbox.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+<link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css">
+<link href="SpryAssets/SpryValidationCheckbox.css" rel="stylesheet" type="text/css">
+<link href="SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<form id="form1" name="form1" method="post">
+  <table width="600" border="1">
+    <tr>
+      <th width="239" scope="col">Adı</th>
+      <th width="345" align="left" scope="col"><span class="textfieldMinCharsMsg"> 2 Karakterden az olamaz.</span><span class="textfieldRequiredMsg">Lütfen İsminizi Giriniz</span><span id="sprytextfield2">
+      <input type="text" name="text1" id="text1">
+      <span class="textfieldRequiredMsg">Adınızı Girmeyi unuttunuz.</span><span class="textfieldMaxCharsMsg">Maksimum karakter sayısı aşıldı.</span><span class="textfieldMinCharsMsg">Minimum 2 karakter.</span></span></th>
+    </tr>
+    <tr>
+      <td align="center"><strong>E-posta</strong></td>
+      <td align="left"><span id="sprytextfield3">
+      <input type="text" name="text2" id="text2">
+      <span class="textfieldRequiredMsg">E-posta girmeyi unuttunuz.</span><span class="textfieldInvalidFormatMsg">Geçersiz E-mail adresi.</span></span></td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Doğum Tarihi</strong></td>
+      <td align="left"><span id="sprytextfield4">
+      <input type="text" name="text3" id="text3">
+      <span class="textfieldRequiredMsg">Bir değer gerekiyor.</span><span class="textfieldInvalidFormatMsg">Geçersiz format.</span></span></td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Yaşı</strong></td>
+      <td align="left"><span id="sprytextfield5">
+      <input type="text" name="text4" id="text4">
+      <span class="textfieldRequiredMsg">Bir değer gerekiyor.</span><span class="textfieldInvalidFormatMsg">Yanlızca Sayısal değer girebilirsiniz.</span><span class="textfieldMinCharsMsg">En az 18 yaşında olmalısın.</span><span class="textfieldMaxCharsMsg">En fazla 65 Yaşında olmalısın.</span></span></td>
+    </tr>
+    <tr>
+      <td>Adres</td>
+      <td align="left"><span id="sprytextarea1">
+      <textarea name="textarea1" id="textarea1" cols="45" rows="5"></textarea>
+      <span id="countsprytextarea1">&nbsp;</span><span class="textareaRequiredMsg">Bir değer gerekiyor.</span><span class="textareaMinCharsMsg">Minimum karakter sayısına ulaşılmadı.</span><span class="textareaMaxCharsMsg">Maksimum karakter sayısı aşıldı.</span></span></td>
+    </tr>
+    <tr>
+      <td>Hobileri</td>
+      <td align="left"><span id="sprycheckbox1">
+      <input type="checkbox" name="checkbox1" id="checkbox1">
+      Kitap Okumak
+      </span>
+      <p><span id="sprycheckbox2">
+        <input type="checkbox" name="checkbox2" id="checkbox2">
+        TV İzlemek
+      </span></p></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left"><span id="sprycheckbox3">
+        <input type="checkbox" name="checkbox3" id="checkbox3">
+        Üyelik Sözleşmesini Onaylayınız.
+      <span class="checkboxRequiredMsg">Üyelik Sözleşmesini Onaylayınız.</span></span></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left"><span id="spryselect1">
+        <select name="select1" id="sehir">
+          <option>Seçiniz</option>
+          <option>Bursa</option>
+          <option>İzmit</option>
+        </select>
+</span></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="left"><input type="submit" name="submit" id="submit" value="Gönder"></td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript">
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {maxChars:20, minChars:2});
+var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "none", {maxChars:20, minChars:2});
+var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "email");
+var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4", "date");
+var sprytextfield5 = new Spry.Widget.ValidationTextField("sprytextfield5", "integer", {minChars:18, maxChars:65});
+var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {minChars:20, maxChars:100, counterType:"chars_count", counterId:"countsprytextarea1", hint:"Adresinizi Giriniz"});
+var sprycheckbox1 = new Spry.Widget.ValidationCheckbox("sprycheckbox1", {isRequired:false});
+var sprycheckbox2 = new Spry.Widget.ValidationCheckbox("sprycheckbox2", {isRequired:false});
+var sprycheckbox3 = new Spry.Widget.ValidationCheckbox("sprycheckbox3");
+var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {isRequired:false});
+</script>
+</body>
+</html>
